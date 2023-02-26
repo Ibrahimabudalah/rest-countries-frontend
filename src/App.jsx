@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
+import Header from "./Components/Header/Header";
 
 export default class App extends Component {
   state = {
-    countries: null,
+    countries: [],
   };
 
   getData = () => {
@@ -14,7 +15,7 @@ export default class App extends Component {
         this.setState(
           {
             countries: res.data,
-          },
+          }
           // console.log(res.data)
         )
       )
@@ -29,7 +30,14 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.countries)
-    return <div>App</div>;
+    console.log(this.state.countries);
+    return (
+      <div>
+        <Header />
+        {/* <div>{(this.state.countries).map((country, index) => {
+          return (<h2 key={index}>{country.name}</h2>)
+        })}</div> */}
+      </div>
+    );
   }
 }
