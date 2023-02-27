@@ -3,6 +3,8 @@ import "./App.css";
 import axios from "axios";
 import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
+import Country from "./Components/Country/Country";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export default class App extends Component {
   state = {
@@ -33,13 +35,23 @@ export default class App extends Component {
   render() {
     console.log(this.state.countries);
     return (
-      <div className="bg-slate-100">
-        <Header />
-        <Main country={this.state.countries} />
-        {/* <div>{(this.state.countries).map((country, index) => {
-          return (<h2 key={index}>{country.name}</h2>)
-        })}</div> */}
-      </div>
+      <BrowserRouter>
+        <div className="bg-slate-100">
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              element={<Main countries={this.state.countries} />}
+            />
+            <Route
+              path={`/${this.state.countries.name}`}
+              component={<Country country={this.state.countries} />}
+            />
+            {/* <Main countries={this.state.countries} />
+            <Country country={this.state.countries} /> */}
+          </Routes>
+        </div>
+      </BrowserRouter>
     );
   }
 }
