@@ -1,20 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 
 function Main(countries) {
-//   console.log(country);
   return (
     <div className="p-5">
       <div>
         <input type="text" placeholder="Search for a country..." />
+        <Menu menuButton={<MenuButton>Filter by Region</MenuButton>}>
+          <MenuItem>Africa</MenuItem>
+          <MenuItem>America</MenuItem>
+          <MenuItem>Asia</MenuItem>
+          <MenuItem>Europe</MenuItem>
+          <MenuItem>Oceania</MenuItem>
+        </Menu>
       </div>
       <div>
         {countries.countries.map((country, index) => {
           return (
             <Link to={country.name} key={index}>
-              <div
-                className="my-5 pb-16 border border-grey-600 shadow-lg rounded-lg bg-white w-3/4"
-              >
+              <div className="my-5 pb-16 border border-grey-600 shadow-lg rounded-lg bg-white w-3/4">
                 <img src={country.flag} alt={country.name} />
                 <div className="pl-5">
                   <h4 className="font-bold py-5">{country.name}</h4>
