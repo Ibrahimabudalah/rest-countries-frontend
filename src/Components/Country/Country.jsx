@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Country(country) {
   console.log(country.country);
@@ -9,7 +10,10 @@ function Country(country) {
   return (
     <div>
       <div>
-        <button className=' before:content-["←"]'>Back</button>
+        <Link to={"/"}>
+          <button className=' before:content-["←"]'>Back</button>
+        </Link>
+
         <div>
           <img src={country.country.flag} alt={country.country.name} />
           <div>
