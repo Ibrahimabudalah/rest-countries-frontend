@@ -43,12 +43,24 @@ export default class App extends Component {
               path="/"
               element={<Main countries={this.state.countries} />}
             />
-            <Route
-              path={`/${this.state.countries.name}`}
-              component={<Country country={this.state.countries} />}
-            />
+            {/* <Route
+              path={"/country"}
+              element={<Country country={this.state.countries} />}
+            /> */}
             {/* <Main countries={this.state.countries} />
             <Country country={this.state.countries} /> */}
+
+            {(this.state.countries).map((indvCountry, index) => {
+              return (
+                <Route
+                  path={`/${indvCountry.name}`}
+                  element={<Country country={indvCountry} />}
+                  key={index}
+                />
+              );
+            })}
+
+
           </Routes>
         </div>
       </BrowserRouter>
