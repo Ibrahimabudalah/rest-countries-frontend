@@ -1,7 +1,11 @@
 import React from "react";
 
 function Country(country) {
-  console.log(country);
+  console.log(country.country);
+
+  let countryKeys = Object.keys(country.country);
+  console.log(countryKeys);
+
   return (
     <div>
       <div>
@@ -20,10 +24,13 @@ function Country(country) {
             {country.country.languages.map((language, index) => {
               return <h3 key={index}>{language.name}</h3>;
             })}
-                      <h1>Border Countries: </h1>
-                      {(country.country.borders).map((border, index) => {
-                          return (<button key={index}>{border}</button>)
-                      })}
+            <h1>Border Countries: </h1>
+
+            {countryKeys.includes("borders" || "border")
+              ? country.country.borders.map((border, index) => {
+                  return <button key={index}>{border}</button>;
+                })
+              : "No Border Countries Found"}
           </div>
         </div>
       </div>

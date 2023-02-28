@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Main(countries) {
 //   console.log(country);
@@ -10,24 +11,25 @@ function Main(countries) {
       <div>
         {countries.countries.map((country, index) => {
           return (
-            <div
-              key={index}
-              className="my-5 pb-16 border border-grey-600 shadow-lg rounded-lg bg-white w-3/4"
-            >
-              <img src={country.flag} alt={country.name} />
-              <div className="pl-5">
-                <h4 className="font-bold py-5">{country.name}</h4>
-                <h4 className='before:content-["Population:"] before:font-medium before:pr-1'>
-                  {country.population}
-                </h4>
-                <h4 className='before:content-["Region:"] before:font-semibold before:pr-1'>
-                  {country.region}
-                </h4>
-                <h4 className='before:content-["Capital:"] before:font-semibold before:pr-1'>
-                  {country.capital}
-                </h4>
+            <Link to={country.name} key={index}>
+              <div
+                className="my-5 pb-16 border border-grey-600 shadow-lg rounded-lg bg-white w-3/4"
+              >
+                <img src={country.flag} alt={country.name} />
+                <div className="pl-5">
+                  <h4 className="font-bold py-5">{country.name}</h4>
+                  <h4 className='before:content-["Population:"] before:font-medium before:pr-1'>
+                    {country.population}
+                  </h4>
+                  <h4 className='before:content-["Region:"] before:font-semibold before:pr-1'>
+                    {country.region}
+                  </h4>
+                  <h4 className='before:content-["Capital:"] before:font-semibold before:pr-1'>
+                    {country.capital}
+                  </h4>
+                </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
