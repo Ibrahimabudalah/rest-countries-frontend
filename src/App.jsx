@@ -36,7 +36,7 @@ export default class App extends Component {
     console.log(this.state.countries);
     return (
       <BrowserRouter>
-        <div className="bg-slate-100">
+        <div className="bg-lightBackground h-screen dark:bg-darkBackground dark:text-white">
           <Header />
           <Routes>
             <Route
@@ -50,7 +50,7 @@ export default class App extends Component {
             {/* <Main countries={this.state.countries} />
             <Country country={this.state.countries} /> */}
 
-            {(this.state.countries).map((indvCountry, index) => {
+            {this.state.countries.map((indvCountry, index) => {
               return (
                 <Route
                   path={`/${indvCountry.name}`}
@@ -59,8 +59,6 @@ export default class App extends Component {
                 />
               );
             })}
-
-
           </Routes>
         </div>
       </BrowserRouter>
