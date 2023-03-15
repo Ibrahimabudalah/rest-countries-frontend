@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Country(country) {
-  console.log(country.country);
-
   let countryKeys = Object.keys(country.country);
   console.log(countryKeys);
 

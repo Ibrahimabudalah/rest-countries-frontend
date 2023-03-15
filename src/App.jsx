@@ -13,7 +13,7 @@ export default class App extends Component {
 
   getData = () => {
     axios
-      .get("http://localhost:8080")
+      .get("https://rest-countries-hdlx.onrender.com")
       .then((res) =>
         this.setState({
           countries: res.data,
@@ -30,7 +30,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.countries);
     return (
       <BrowserRouter>
         <div className="bg-lightBackground h-screen dark:bg-darkBackground dark:text-white">
