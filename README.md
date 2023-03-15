@@ -27,7 +27,7 @@ The front-end is connected to a Node server using Axios to populate data.
 Clone the project
 
 ```bash
-  git clone git@github.com:ibrahimabdulah/rest-countries-server.git
+  git clone git@github.com:ibrahimabdulah/rest-countries-frontend.git
 ```
 
 Go to the project directory
