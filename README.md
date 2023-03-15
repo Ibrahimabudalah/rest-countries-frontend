@@ -33,7 +33,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd rest-countries-server
+  cd rest-countries-frontend
 
 ```
 
