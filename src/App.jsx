@@ -15,12 +15,9 @@ export default class App extends Component {
     axios
       .get("http://localhost:8080")
       .then((res) =>
-        this.setState(
-          {
-            countries: res.data,
-          }
-          // console.log(res.data)
-        )
+        this.setState({
+          countries: res.data,
+        })
       )
 
       .catch((err) => {
@@ -43,12 +40,6 @@ export default class App extends Component {
               path="/"
               element={<Main countries={this.state.countries} />}
             />
-            {/* <Route
-              path={"/country"}
-              element={<Country country={this.state.countries} />}
-            /> */}
-            {/* <Main countries={this.state.countries} />
-            <Country country={this.state.countries} /> */}
 
             {this.state.countries.map((indvCountry, index) => {
               return (

@@ -57,15 +57,6 @@ function Country(country) {
                   })}
                 </h3>
               </div>
-              {/* <div className="flex flex-wrap">
-                <h1>Border Countries:</h1>
-
-                {countryKeys.includes("borders" || "border")
-                  ? country.country.borders.map((border, index) => {
-                      return <button key={index}>{border},</button>;
-                    })
-                  : "No Border Countries Found"}
-              </div> */}
             </div>
           </div>
         </div>
